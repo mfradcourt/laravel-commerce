@@ -3,10 +3,13 @@
 namespace Tests\Unit;
 
 use App\Models\Product;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use PHPUnit\Framework\TestCase;
 
 class ProductTest extends TestCase
 {
+    use DatabaseMigrations;
+
     public function test_hasStock_isTrue_whenThereIsStock()
     {
         $product = new Product();
