@@ -30,13 +30,12 @@
             <img height="50px" width="50px" src="{{ $product->picture }}" />
 
             @if ($product->hasStock())
-            <button>Add to Cart</button>
+                <button>Add to Cart</button>
             @else
                 <p>Out of Stock</p>
             @endif
         </div>
         @endforeach
-
 
 </div>
 </body>

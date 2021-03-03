@@ -3,19 +3,19 @@
 namespace App\Controllers;
 
 use App\Http\Controllers\Controller;
-use Illuminate\View\View;
+use App\Models\Product;
+use Illuminate\Contracts\View\View;
 
 class HomepageController extends Controller
 {
     /**
      * Show the homepage
      *
-     * @return View
      */
-    public function homepage()
+    public function homepage(): View
     {
         return view('homepage', [
-            'products' => \App\Models\Product::get()
+            'products' => Product::where('active', '=', true)->get()
         ]);
     }
 }
